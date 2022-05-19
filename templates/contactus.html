@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+
+{% block body_conent %}
+
+<table>
+  <tr>
+    <th>Format</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>Reach Us</td>
+    <td>{{ address|capfirst}} </td>
+  </tr>
+  <tr>
+    <td>Call Us</td>
+    <td>{{ phone }}</td>
+  </tr>
+  <tr>
+    <td>Email Us</td>
+    <td>{{ email|urlize }}</td>
+  </tr>
+</table>
+
+
+<ul>
+{% for eachBlog in blog_numbers %}
+	{% if eachBlog == 1 %}
+		<li> {{ forloop.counter}} - {{ 100 }} </li>
+	{% else %}
+		<li> {{ forloop.counter}} - {{ eachBlog| add:"2" }} </li>
+	{% endif %}
+{% endfor %}
+</ul>
+
+
+{% endblock body_conent %}

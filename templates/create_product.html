@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body_conent %}
+	{{ message }}
+	<form method="POST">
+		{{ prod_form.as_p }}
+		{% csrf_token %}
+		<input type="submit" title="Submit">
+	</form>	
+
+
+{% endblock body_conent %}
